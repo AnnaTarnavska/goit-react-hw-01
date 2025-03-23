@@ -1,33 +1,25 @@
-import Profile from './components/Profile/Profile';
+import Profile from "./components/Profile/Profile";
+import userData from "./data/userData.json";
+import FriendList from "./components/FriendList/FriendList";
+import friends from "./data/friends.json";
+import TransactionHistory from "./components/TransactionHistory/TransactionHistory";
+import transactions from "./data/transactions.json";
+import "modern-normalize";
 
-export const App = () => {
+const App = () => {
   return (
-    <div>
-  <div>
-    <img
-      src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
-      alt="User avatar"
-    />
-    <p>Petra Marica</p>
-    <p>@pmarica</p>
-    <p>Salvador, Brasil</p>
-  </div>
+    <>
+      <Profile
+        name={userData.username}
+        tag={userData.tag}
+        location={userData.location}
+        image={userData.avatar}
+        stats={userData.stats}
+      />
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />
+    </>
+  );
+};
 
-  <ul>
-    <li>
-      <span>Followers</span>
-      <span>1000</span>
-    </li>
-    <li>
-      <span>Views</span>
-      <span>2000</span>
-    </li>
-    <li>
-      <span>Likes</span>
-      <span>3000</span>
-    </li>
-  </ul>
-</div>
-
-  )
-}
+export default App;

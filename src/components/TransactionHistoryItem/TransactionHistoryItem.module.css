@@ -1,0 +1,12 @@
+.itemList {
+    border: 1px solid #000;
+    color: #000;
+}
+
+.itemList:nth-child(even) {
+    background-color: rgb(126, 127, 128);
+}
+
+.item {
+    align-items: center;
+}
